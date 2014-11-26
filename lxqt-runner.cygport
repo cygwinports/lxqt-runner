@@ -1,7 +1,7 @@
-inherit qt4-cmake
+inherit qt5 cmake
 
 NAME="lxqt-runner"
-VERSION=0.7.0
+VERSION=0.8.0
 RELEASE=1
 CATEGORY="X11"
 SUMMARY="LXQt run dialog"
@@ -10,4 +10,8 @@ product of the merge between the LXDE-Qt and the Razor-qt projects: A
 lightweight, modular, blazing-fast and user-friendly desktop environment."
 HOMEPAGE="http://lxqt.org/"
 SRC_URI="http://lxqt.org/downloads/lxqt/${VERSION}/${NAME}-${VERSION}.tar.xz"
-SRC_DIR=.
+PATCH_URI="
+	http://pkgs.fedoraproject.org/cgit/lxqt-runner.git/plain/lxqt-runner-0.8.0-qt5-path.patch
+"
+
+export USE_QT5=1
